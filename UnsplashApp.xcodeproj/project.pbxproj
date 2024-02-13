@@ -67,6 +67,12 @@
 		BF4F2B2C2B7B9DD100E5D892 /* PhotoInfoVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B2B2B7B9DD100E5D892 /* PhotoInfoVM.swift */; };
 		BF4F2B2E2B7B9DDC00E5D892 /* PhotoInfoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B2D2B7B9DDC00E5D892 /* PhotoInfoCoordinator.swift */; };
 		BF4F2B302B7B9DF200E5D892 /* PhotoInfoAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B2F2B7B9DF200E5D892 /* PhotoInfoAssembler.swift */; };
+		BF4F2B332B7BAC3700E5D892 /* ImageDownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B322B7BAC3700E5D892 /* ImageDownloadService.swift */; };
+		BF4F2B362B7BAC5D00E5D892 /* ImageDownloadServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B352B7BAC5D00E5D892 /* ImageDownloadServiceProtocol.swift */; };
+		BF4F2B392B7BAC8800E5D892 /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B382B7BAC8800E5D892 /* ImageCacheService.swift */; };
+		BF4F2B3B2B7BAFEC00E5D892 /* ImageDownloadCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B3A2B7BAFEC00E5D892 /* ImageDownloadCellVM.swift */; };
+		BF4F2B3D2B7BAFF800E5D892 /* FavPhotoCellAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B3C2B7BAFF800E5D892 /* FavPhotoCellAssembler.swift */; };
+		BF4F2B402B7BB02100E5D892 /* ImageDownloadCellVMProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B3F2B7BB02100E5D892 /* ImageDownloadCellVMProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,6 +138,12 @@
 		BF4F2B2B2B7B9DD100E5D892 /* PhotoInfoVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoVM.swift; sourceTree = "<group>"; };
 		BF4F2B2D2B7B9DDC00E5D892 /* PhotoInfoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoCoordinator.swift; sourceTree = "<group>"; };
 		BF4F2B2F2B7B9DF200E5D892 /* PhotoInfoAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoAssembler.swift; sourceTree = "<group>"; };
+		BF4F2B322B7BAC3700E5D892 /* ImageDownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadService.swift; sourceTree = "<group>"; };
+		BF4F2B352B7BAC5D00E5D892 /* ImageDownloadServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadServiceProtocol.swift; sourceTree = "<group>"; };
+		BF4F2B382B7BAC8800E5D892 /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
+		BF4F2B3A2B7BAFEC00E5D892 /* ImageDownloadCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadCellVM.swift; sourceTree = "<group>"; };
+		BF4F2B3C2B7BAFF800E5D892 /* FavPhotoCellAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavPhotoCellAssembler.swift; sourceTree = "<group>"; };
+		BF4F2B3F2B7BB02100E5D892 /* ImageDownloadCellVMProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadCellVMProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +204,8 @@
 		BF4F2A892B7634CF00E5D892 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				BF4F2B372B7BAC7000E5D892 /* ImageCacheService */,
+				BF4F2B312B7BABF400E5D892 /* ImageDownloadService */,
 				BF4F2AEB2B7B601E00E5D892 /* NetworkService */,
 				BF4F2AE32B7B5ED500E5D892 /* AuthService */,
 				BF4F2ADA2B7B568E00E5D892 /* ParametrsService */,
@@ -307,9 +321,8 @@
 		BF4F2AE02B7B5A0E00E5D892 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				BF4F2AE12B7B5A2700E5D892 /* Optional+Extension.swift */,
-				BF4F2B072B7B82F000E5D892 /* UIWindow+Extension.swift */,
-				BF4F2B092B7B831300E5D892 /* UIScreen+Extension.swift */,
+				BF4F2B432B7BB63600E5D892 /* Extensions */,
+				BF4F2B422B7BB56800E5D892 /* ImageDownloadCellVM */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -429,6 +442,59 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		BF4F2B312B7BABF400E5D892 /* ImageDownloadService */ = {
+			isa = PBXGroup;
+			children = (
+				BF4F2B342B7BAC4D00E5D892 /* Protocols */,
+				BF4F2B322B7BAC3700E5D892 /* ImageDownloadService.swift */,
+			);
+			path = ImageDownloadService;
+			sourceTree = "<group>";
+		};
+		BF4F2B342B7BAC4D00E5D892 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BF4F2B352B7BAC5D00E5D892 /* ImageDownloadServiceProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		BF4F2B372B7BAC7000E5D892 /* ImageCacheService */ = {
+			isa = PBXGroup;
+			children = (
+				BF4F2B382B7BAC8800E5D892 /* ImageCacheService.swift */,
+			);
+			path = ImageCacheService;
+			sourceTree = "<group>";
+		};
+		BF4F2B3E2B7BB01100E5D892 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BF4F2B3F2B7BB02100E5D892 /* ImageDownloadCellVMProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		BF4F2B422B7BB56800E5D892 /* ImageDownloadCellVM */ = {
+			isa = PBXGroup;
+			children = (
+				BF4F2B3E2B7BB01100E5D892 /* Protocols */,
+				BF4F2B3A2B7BAFEC00E5D892 /* ImageDownloadCellVM.swift */,
+				BF4F2B3C2B7BAFF800E5D892 /* FavPhotoCellAssembler.swift */,
+			);
+			path = ImageDownloadCellVM;
+			sourceTree = "<group>";
+		};
+		BF4F2B432B7BB63600E5D892 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BF4F2AE12B7B5A2700E5D892 /* Optional+Extension.swift */,
+				BF4F2B072B7B82F000E5D892 /* UIWindow+Extension.swift */,
+				BF4F2B092B7B831300E5D892 /* UIScreen+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -502,6 +568,7 @@
 				BF4F2AF82B7B662400E5D892 /* AuthVCParametersServiceProtocol.swift in Sources */,
 				BF4F2AFD2B7B76D400E5D892 /* AlertControllerFactoryProtocol.swift in Sources */,
 				BF4F2AF22B7B606D00E5D892 /* AuthError.swift in Sources */,
+				BF4F2B362B7BAC5D00E5D892 /* ImageDownloadServiceProtocol.swift in Sources */,
 				BF4F2B242B7B9D9800E5D892 /* PhotoInfoVMProtocol.swift in Sources */,
 				BF4F2B102B7B8CC000E5D892 /* FavPhotosListVC.swift in Sources */,
 				BF4F2B022B7B807300E5D892 /* PhotoListVMProtocol.swift in Sources */,
@@ -517,6 +584,7 @@
 				BF4F2AE82B7B5FD200E5D892 /* UserAuthorizationScope.swift in Sources */,
 				BF4F2ACB2B7A2D5700E5D892 /* AuthVM.swift in Sources */,
 				BF4F2AF02B7B605500E5D892 /* HTTPMethod.swift in Sources */,
+				BF4F2B402B7BB02100E5D892 /* ImageDownloadCellVMProtocol.swift in Sources */,
 				BF4F2B0D2B7B83B900E5D892 /* PhotoCell.swift in Sources */,
 				BF4F2AC32B7A2AA100E5D892 /* PhotoListCoordinator.swift in Sources */,
 				BF4F2AEA2B7B5FF100E5D892 /* AuthQueryParameterName.swift in Sources */,
@@ -534,7 +602,10 @@
 				BF4F2A9B2B7636BE00E5D892 /* TabBarCoordinator.swift in Sources */,
 				BF4F2B2A2B7B9DC900E5D892 /* PhotoInfoVC.swift in Sources */,
 				BF4F2AD52B7A2DD200E5D892 /* AuthRootCoordinatorProtocol.swift in Sources */,
+				BF4F2B332B7BAC3700E5D892 /* ImageDownloadService.swift in Sources */,
+				BF4F2B3D2B7BAFF800E5D892 /* FavPhotoCellAssembler.swift in Sources */,
 				BF4F2ADF2B7B58A500E5D892 /* AppCoordinatorParametrsServiceProtocol.swift in Sources */,
+				BF4F2B392B7BAC8800E5D892 /* ImageCacheService.swift in Sources */,
 				BF4F2B002B7B79AA00E5D892 /* ConstStrings.swift in Sources */,
 				BF4F2B2E2B7B9DDC00E5D892 /* PhotoInfoCoordinator.swift in Sources */,
 				BF4F2B162B7B8CFF00E5D892 /* FavPhotoListCoordinator.swift in Sources */,
@@ -545,6 +616,7 @@
 				BF4F2A732B7632E100E5D892 /* SceneDelegate.swift in Sources */,
 				BF4F2B262B7B9DA600E5D892 /* PhotoInfoCoordinatorProtocol.swift in Sources */,
 				BF4F2ACF2B7A2D7800E5D892 /* AuthAssembler.swift in Sources */,
+				BF4F2B3B2B7BAFEC00E5D892 /* ImageDownloadCellVM.swift in Sources */,
 				BF4F2AF62B7B63C000E5D892 /* AuthVCAuthServiceProtocol.swift in Sources */,
 				BF4F2B2C2B7B9DD100E5D892 /* PhotoInfoVM.swift in Sources */,
 				BF4F2B122B7B8CCB00E5D892 /* FavPhotosListVM.swift in Sources */,

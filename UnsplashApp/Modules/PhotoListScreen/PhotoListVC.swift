@@ -97,7 +97,10 @@ extension PhotoListVC: UICollectionViewDelegate,
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(PhotoCell.self)", for: indexPath) as? PhotoCell else { return UICollectionViewCell() }
-        cell.setImage(UIImage(systemName: "gear")!)
+        cell.viewModel = ImageDownloadCellAssembler.makeVM()
+        if let url = URL(string: "https://images.unsplash.com/photo-1417325384643-aac51acc9e5d?q=75&fm=jpg&w=1080&fit=max") {
+            cell.configureCell(imageURL: url)
+        }
         return cell
     }
     
