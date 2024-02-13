@@ -39,7 +39,9 @@ final class TabBarCoordinator: Coordinator,
     }
     
     private func generateFavoritePhotoListItem(tabBar: UITabBarController) {
-
+        let coordinator = FavPhotoListCoordinator(tabBarController: tabBar, rootCoordinator: self, container: container)
+        childCoordinators.append(coordinator)
+        coordinator.start()
     }
     
 }
@@ -52,3 +54,10 @@ extension TabBarCoordinator: PhotoListRootCoordinatorProtocol {
     }
 }
 
+extension TabBarCoordinator: FavPhotosListRootCoordinatorProtocol {
+    func favPhotoListVCFinished(_ coordinator: Coordinator) {
+        childCoordinators.removeAll { tmp in
+            tmp === coordinator
+        }
+    }
+}
