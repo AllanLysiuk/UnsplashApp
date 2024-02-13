@@ -32,4 +32,22 @@ final class PhotoListCoordinator: Coordinator {
     
 }
 
-extension PhotoListCoordinator: PhotoListCoordinatorProtocol {}
+extension PhotoListCoordinator: PhotoListCoordinatorProtocol {
+    func showPhotoInfoVC() {
+        let coordinator = PhotoInfoCoordinator(
+            rootNavigationController: navigationController,
+            rootCoordinator: self,
+            container: container
+        )
+        childCoordinators.append(coordinator)
+        coordinator.start()
+    }
+}
+
+extension PhotoListCoordinator: PhotoInfoRootCoordinatorProtocol {
+    func photoInfoFinished(_ coordinator: Coordinator) {
+        childCoordinators.removeAll { tmp in
+            tmp === coordinator
+        }
+    }
+}

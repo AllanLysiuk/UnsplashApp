@@ -80,4 +80,8 @@ extension FavPhotosListVC: UITableViewDelegate, UITableViewDataSource {
         cell.configureCell(authorName: "Author", image: UIImage(systemName: "heart")!)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.showPhotoInfoVC()
+    }
 }

@@ -60,6 +60,13 @@
 		BF4F2B1B2B7B8D2900E5D892 /* FavPhotosListVMProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B1A2B7B8D2900E5D892 /* FavPhotosListVMProtocol.swift */; };
 		BF4F2B1D2B7B8D3D00E5D892 /* FavPhotosListRootCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B1C2B7B8D3D00E5D892 /* FavPhotosListRootCoordinatorProtocol.swift */; };
 		BF4F2B202B7B94D000E5D892 /* FavPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B1F2B7B94D000E5D892 /* FavPhotoCell.swift */; };
+		BF4F2B242B7B9D9800E5D892 /* PhotoInfoVMProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B232B7B9D9800E5D892 /* PhotoInfoVMProtocol.swift */; };
+		BF4F2B262B7B9DA600E5D892 /* PhotoInfoCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B252B7B9DA600E5D892 /* PhotoInfoCoordinatorProtocol.swift */; };
+		BF4F2B282B7B9DB600E5D892 /* PhotoInfoRootCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B272B7B9DB600E5D892 /* PhotoInfoRootCoordinatorProtocol.swift */; };
+		BF4F2B2A2B7B9DC900E5D892 /* PhotoInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B292B7B9DC900E5D892 /* PhotoInfoVC.swift */; };
+		BF4F2B2C2B7B9DD100E5D892 /* PhotoInfoVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B2B2B7B9DD100E5D892 /* PhotoInfoVM.swift */; };
+		BF4F2B2E2B7B9DDC00E5D892 /* PhotoInfoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B2D2B7B9DDC00E5D892 /* PhotoInfoCoordinator.swift */; };
+		BF4F2B302B7B9DF200E5D892 /* PhotoInfoAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B2F2B7B9DF200E5D892 /* PhotoInfoAssembler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +125,13 @@
 		BF4F2B1A2B7B8D2900E5D892 /* FavPhotosListVMProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavPhotosListVMProtocol.swift; sourceTree = "<group>"; };
 		BF4F2B1C2B7B8D3D00E5D892 /* FavPhotosListRootCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavPhotosListRootCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		BF4F2B1F2B7B94D000E5D892 /* FavPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavPhotoCell.swift; sourceTree = "<group>"; };
+		BF4F2B232B7B9D9800E5D892 /* PhotoInfoVMProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoVMProtocol.swift; sourceTree = "<group>"; };
+		BF4F2B252B7B9DA600E5D892 /* PhotoInfoCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		BF4F2B272B7B9DB600E5D892 /* PhotoInfoRootCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoRootCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		BF4F2B292B7B9DC900E5D892 /* PhotoInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoVC.swift; sourceTree = "<group>"; };
+		BF4F2B2B2B7B9DD100E5D892 /* PhotoInfoVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoVM.swift; sourceTree = "<group>"; };
+		BF4F2B2D2B7B9DDC00E5D892 /* PhotoInfoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoCoordinator.swift; sourceTree = "<group>"; };
+		BF4F2B2F2B7B9DF200E5D892 /* PhotoInfoAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoAssembler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +212,7 @@
 		BF4F2A8F2B7635A900E5D892 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				BF4F2B212B7B9D7B00E5D892 /* PhotoInfoScreen */,
 				BF4F2B0E2B7B8C9100E5D892 /* FavoritePhotosListScreen */,
 				BF4F2AC62B7A2CF800E5D892 /* AuthScreen */,
 				BF4F2ABC2B7A2A4100E5D892 /* PhotoListScreen */,
@@ -392,6 +407,28 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		BF4F2B212B7B9D7B00E5D892 /* PhotoInfoScreen */ = {
+			isa = PBXGroup;
+			children = (
+				BF4F2B222B7B9D8300E5D892 /* Protocols */,
+				BF4F2B292B7B9DC900E5D892 /* PhotoInfoVC.swift */,
+				BF4F2B2B2B7B9DD100E5D892 /* PhotoInfoVM.swift */,
+				BF4F2B2D2B7B9DDC00E5D892 /* PhotoInfoCoordinator.swift */,
+				BF4F2B2F2B7B9DF200E5D892 /* PhotoInfoAssembler.swift */,
+			);
+			path = PhotoInfoScreen;
+			sourceTree = "<group>";
+		};
+		BF4F2B222B7B9D8300E5D892 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BF4F2B232B7B9D9800E5D892 /* PhotoInfoVMProtocol.swift */,
+				BF4F2B252B7B9DA600E5D892 /* PhotoInfoCoordinatorProtocol.swift */,
+				BF4F2B272B7B9DB600E5D892 /* PhotoInfoRootCoordinatorProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -465,6 +502,7 @@
 				BF4F2AF82B7B662400E5D892 /* AuthVCParametersServiceProtocol.swift in Sources */,
 				BF4F2AFD2B7B76D400E5D892 /* AlertControllerFactoryProtocol.swift in Sources */,
 				BF4F2AF22B7B606D00E5D892 /* AuthError.swift in Sources */,
+				BF4F2B242B7B9D9800E5D892 /* PhotoInfoVMProtocol.swift in Sources */,
 				BF4F2B102B7B8CC000E5D892 /* FavPhotosListVC.swift in Sources */,
 				BF4F2B022B7B807300E5D892 /* PhotoListVMProtocol.swift in Sources */,
 				BF4F2B142B7B8CEB00E5D892 /* FavPhotosListAssembler.swift in Sources */,
@@ -486,23 +524,29 @@
 				BF4F2A8C2B7634EE00E5D892 /* Container.swift in Sources */,
 				BF4F2A952B76361200E5D892 /* TabBarRootCoordinatorProtocol.swift in Sources */,
 				BF4F2B042B7B80BE00E5D892 /* PhotoListCoordinatorProtocol.swift in Sources */,
+				BF4F2B282B7B9DB600E5D892 /* PhotoInfoRootCoordinatorProtocol.swift in Sources */,
 				BF4F2ABF2B7A2A7900E5D892 /* PhotoListVC.swift in Sources */,
 				BF4F2AFB2B7B76BA00E5D892 /* AlertControllerFactory.swift in Sources */,
 				BF4F2B082B7B82F000E5D892 /* UIWindow+Extension.swift in Sources */,
+				BF4F2B302B7B9DF200E5D892 /* PhotoInfoAssembler.swift in Sources */,
 				BF4F2ADC2B7B56AE00E5D892 /* ParametrsService.swift in Sources */,
 				BF4F2AF42B7B609500E5D892 /* AuthUserModel.swift in Sources */,
 				BF4F2A9B2B7636BE00E5D892 /* TabBarCoordinator.swift in Sources */,
+				BF4F2B2A2B7B9DC900E5D892 /* PhotoInfoVC.swift in Sources */,
 				BF4F2AD52B7A2DD200E5D892 /* AuthRootCoordinatorProtocol.swift in Sources */,
 				BF4F2ADF2B7B58A500E5D892 /* AppCoordinatorParametrsServiceProtocol.swift in Sources */,
 				BF4F2B002B7B79AA00E5D892 /* ConstStrings.swift in Sources */,
+				BF4F2B2E2B7B9DDC00E5D892 /* PhotoInfoCoordinator.swift in Sources */,
 				BF4F2B162B7B8CFF00E5D892 /* FavPhotoListCoordinator.swift in Sources */,
 				BF4F2A712B7632E100E5D892 /* AppDelegate.swift in Sources */,
 				BF4F2B1B2B7B8D2900E5D892 /* FavPhotosListVMProtocol.swift in Sources */,
 				BF4F2AEE2B7B603C00E5D892 /* UNCredentials.swift in Sources */,
 				BF4F2AD32B7A2DB300E5D892 /* AuthCoordinatorProtocol.swift in Sources */,
 				BF4F2A732B7632E100E5D892 /* SceneDelegate.swift in Sources */,
+				BF4F2B262B7B9DA600E5D892 /* PhotoInfoCoordinatorProtocol.swift in Sources */,
 				BF4F2ACF2B7A2D7800E5D892 /* AuthAssembler.swift in Sources */,
 				BF4F2AF62B7B63C000E5D892 /* AuthVCAuthServiceProtocol.swift in Sources */,
+				BF4F2B2C2B7B9DD100E5D892 /* PhotoInfoVM.swift in Sources */,
 				BF4F2B122B7B8CCB00E5D892 /* FavPhotosListVM.swift in Sources */,
 				BF4F2AE52B7B5EE200E5D892 /* AuthService.swift in Sources */,
 				BF4F2AC12B7A2A8500E5D892 /* PhotoListVM.swift in Sources */,

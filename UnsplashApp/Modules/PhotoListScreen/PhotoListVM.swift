@@ -9,6 +9,10 @@ final class PhotoListVM: PhotoListVMProtocol {
         self.coordinator = coordinator
     }
     
+    func showPhotoInfoVC() {
+        coordinator?.showPhotoInfoVC()
+    }
+    
     func finish() {
         coordinator?.finish()
     }

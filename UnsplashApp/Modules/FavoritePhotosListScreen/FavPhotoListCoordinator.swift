@@ -32,4 +32,23 @@ final class FavPhotoListCoordinator: Coordinator {
     
 }
 
-extension FavPhotoListCoordinator: FavPhotosListCoordinatorProtocol {}
+extension FavPhotoListCoordinator: FavPhotosListCoordinatorProtocol {
+    func showPhotoInfoVC() {
+        let coordinator = PhotoInfoCoordinator(
+            rootNavigationController: navigationController,
+            rootCoordinator: self,
+            container: container
+        )
+        childCoordinators.append(coordinator)
+        coordinator.start()
+    }
+}
+
+extension FavPhotoListCoordinator: PhotoInfoRootCoordinatorProtocol {
+    func photoInfoFinished(_ coordinator: Coordinator) {
+        childCoordinators.removeAll { tmp in
+            tmp === coordinator
+        }
+    }
+}
+

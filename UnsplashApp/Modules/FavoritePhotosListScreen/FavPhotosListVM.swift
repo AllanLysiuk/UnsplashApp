@@ -9,6 +9,10 @@ final class FavPhotosListVM: FavPhotosListVMProtocol {
         self.coordinator = coordinator
     }
     
+    func showPhotoInfoVC() {
+        coordinator?.showPhotoInfoVC()
+    }
+    
     func finish() {
         coordinator?.finish()
     }

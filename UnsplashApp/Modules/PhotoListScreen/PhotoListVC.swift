@@ -101,6 +101,10 @@ extension PhotoListVC: UICollectionViewDelegate,
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.showPhotoInfoVC()
+    }
+    
 }
 
 extension PhotoListVC: UISearchBarDelegate {
