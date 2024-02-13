@@ -20,10 +20,10 @@
 		BF4F2A972B76362800E5D892 /* TabBarAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2A962B76362800E5D892 /* TabBarAssembler.swift */; };
 		BF4F2A992B76364300E5D892 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2A982B76364300E5D892 /* TabBarController.swift */; };
 		BF4F2A9B2B7636BE00E5D892 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2A9A2B7636BE00E5D892 /* TabBarCoordinator.swift */; };
-		BF4F2ABF2B7A2A7900E5D892 /* RandomPhotosListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2ABE2B7A2A7900E5D892 /* RandomPhotosListVC.swift */; };
-		BF4F2AC12B7A2A8500E5D892 /* RandomPhotosListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2AC02B7A2A8500E5D892 /* RandomPhotosListVM.swift */; };
-		BF4F2AC32B7A2AA100E5D892 /* RandomPhotosListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2AC22B7A2AA100E5D892 /* RandomPhotosListCoordinator.swift */; };
-		BF4F2AC52B7A2AB500E5D892 /* RandomPhotosListAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2AC42B7A2AB500E5D892 /* RandomPhotosListAssembler.swift */; };
+		BF4F2ABF2B7A2A7900E5D892 /* PhotoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2ABE2B7A2A7900E5D892 /* PhotoListVC.swift */; };
+		BF4F2AC12B7A2A8500E5D892 /* PhotoListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2AC02B7A2A8500E5D892 /* PhotoListVM.swift */; };
+		BF4F2AC32B7A2AA100E5D892 /* PhotoListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2AC22B7A2AA100E5D892 /* PhotoListCoordinator.swift */; };
+		BF4F2AC52B7A2AB500E5D892 /* PhotoListAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2AC42B7A2AB500E5D892 /* PhotoListAssembler.swift */; };
 		BF4F2AC92B7A2D2600E5D892 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2AC82B7A2D2600E5D892 /* AuthVC.swift */; };
 		BF4F2ACB2B7A2D5700E5D892 /* AuthVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2ACA2B7A2D5700E5D892 /* AuthVM.swift */; };
 		BF4F2ACD2B7A2D6900E5D892 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2ACC2B7A2D6900E5D892 /* AuthCoordinator.swift */; };
@@ -46,6 +46,12 @@
 		BF4F2AFB2B7B76BA00E5D892 /* AlertControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2AFA2B7B76BA00E5D892 /* AlertControllerFactory.swift */; };
 		BF4F2AFD2B7B76D400E5D892 /* AlertControllerFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2AFC2B7B76D400E5D892 /* AlertControllerFactoryProtocol.swift */; };
 		BF4F2B002B7B79AA00E5D892 /* ConstStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2AFF2B7B79AA00E5D892 /* ConstStrings.swift */; };
+		BF4F2B022B7B807300E5D892 /* PhotoListVMProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B012B7B807300E5D892 /* PhotoListVMProtocol.swift */; };
+		BF4F2B042B7B80BE00E5D892 /* PhotoListCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B032B7B80BE00E5D892 /* PhotoListCoordinatorProtocol.swift */; };
+		BF4F2B062B7B80CE00E5D892 /* PhotoListRootCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B052B7B80CE00E5D892 /* PhotoListRootCoordinatorProtocol.swift */; };
+		BF4F2B082B7B82F000E5D892 /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B072B7B82F000E5D892 /* UIWindow+Extension.swift */; };
+		BF4F2B0A2B7B831300E5D892 /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B092B7B831300E5D892 /* UIScreen+Extension.swift */; };
+		BF4F2B0D2B7B83B900E5D892 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B0C2B7B83B900E5D892 /* PhotoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,10 +70,10 @@
 		BF4F2A962B76362800E5D892 /* TabBarAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarAssembler.swift; sourceTree = "<group>"; };
 		BF4F2A982B76364300E5D892 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		BF4F2A9A2B7636BE00E5D892 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
-		BF4F2ABE2B7A2A7900E5D892 /* RandomPhotosListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPhotosListVC.swift; sourceTree = "<group>"; };
-		BF4F2AC02B7A2A8500E5D892 /* RandomPhotosListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPhotosListVM.swift; sourceTree = "<group>"; };
-		BF4F2AC22B7A2AA100E5D892 /* RandomPhotosListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPhotosListCoordinator.swift; sourceTree = "<group>"; };
-		BF4F2AC42B7A2AB500E5D892 /* RandomPhotosListAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPhotosListAssembler.swift; sourceTree = "<group>"; };
+		BF4F2ABE2B7A2A7900E5D892 /* PhotoListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListVC.swift; sourceTree = "<group>"; };
+		BF4F2AC02B7A2A8500E5D892 /* PhotoListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListVM.swift; sourceTree = "<group>"; };
+		BF4F2AC22B7A2AA100E5D892 /* PhotoListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListCoordinator.swift; sourceTree = "<group>"; };
+		BF4F2AC42B7A2AB500E5D892 /* PhotoListAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListAssembler.swift; sourceTree = "<group>"; };
 		BF4F2AC82B7A2D2600E5D892 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
 		BF4F2ACA2B7A2D5700E5D892 /* AuthVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVM.swift; sourceTree = "<group>"; };
 		BF4F2ACC2B7A2D6900E5D892 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
@@ -90,6 +96,12 @@
 		BF4F2AFA2B7B76BA00E5D892 /* AlertControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerFactory.swift; sourceTree = "<group>"; };
 		BF4F2AFC2B7B76D400E5D892 /* AlertControllerFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerFactoryProtocol.swift; sourceTree = "<group>"; };
 		BF4F2AFF2B7B79AA00E5D892 /* ConstStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstStrings.swift; sourceTree = "<group>"; };
+		BF4F2B012B7B807300E5D892 /* PhotoListVMProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListVMProtocol.swift; sourceTree = "<group>"; };
+		BF4F2B032B7B80BE00E5D892 /* PhotoListCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		BF4F2B052B7B80CE00E5D892 /* PhotoListRootCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListRootCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		BF4F2B072B7B82F000E5D892 /* UIWindow+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
+		BF4F2B092B7B831300E5D892 /* UIScreen+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
+		BF4F2B0C2B7B83B900E5D892 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,7 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				BF4F2AC62B7A2CF800E5D892 /* AuthScreen */,
-				BF4F2ABC2B7A2A4100E5D892 /* RandomPhotosList */,
+				BF4F2ABC2B7A2A4100E5D892 /* PhotoListScreen */,
 				BF4F2A902B7635CB00E5D892 /* TabBarController */,
 			);
 			path = Modules;
@@ -197,21 +209,25 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		BF4F2ABC2B7A2A4100E5D892 /* RandomPhotosList */ = {
+		BF4F2ABC2B7A2A4100E5D892 /* PhotoListScreen */ = {
 			isa = PBXGroup;
 			children = (
+				BF4F2B0B2B7B83A800E5D892 /* Cells */,
 				BF4F2ABD2B7A2A5900E5D892 /* Protocols */,
-				BF4F2ABE2B7A2A7900E5D892 /* RandomPhotosListVC.swift */,
-				BF4F2AC02B7A2A8500E5D892 /* RandomPhotosListVM.swift */,
-				BF4F2AC22B7A2AA100E5D892 /* RandomPhotosListCoordinator.swift */,
-				BF4F2AC42B7A2AB500E5D892 /* RandomPhotosListAssembler.swift */,
+				BF4F2ABE2B7A2A7900E5D892 /* PhotoListVC.swift */,
+				BF4F2AC02B7A2A8500E5D892 /* PhotoListVM.swift */,
+				BF4F2AC22B7A2AA100E5D892 /* PhotoListCoordinator.swift */,
+				BF4F2AC42B7A2AB500E5D892 /* PhotoListAssembler.swift */,
 			);
-			path = RandomPhotosList;
+			path = PhotoListScreen;
 			sourceTree = "<group>";
 		};
 		BF4F2ABD2B7A2A5900E5D892 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				BF4F2B012B7B807300E5D892 /* PhotoListVMProtocol.swift */,
+				BF4F2B032B7B80BE00E5D892 /* PhotoListCoordinatorProtocol.swift */,
+				BF4F2B052B7B80CE00E5D892 /* PhotoListRootCoordinatorProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -260,6 +276,8 @@
 			isa = PBXGroup;
 			children = (
 				BF4F2AE12B7B5A2700E5D892 /* Optional+Extension.swift */,
+				BF4F2B072B7B82F000E5D892 /* UIWindow+Extension.swift */,
+				BF4F2B092B7B831300E5D892 /* UIScreen+Extension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -316,6 +334,14 @@
 				BF4F2AFF2B7B79AA00E5D892 /* ConstStrings.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		BF4F2B0B2B7B83A800E5D892 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BF4F2B0C2B7B83B900E5D892 /* PhotoCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,21 +417,26 @@
 				BF4F2AF82B7B662400E5D892 /* AuthVCParametersServiceProtocol.swift in Sources */,
 				BF4F2AFD2B7B76D400E5D892 /* AlertControllerFactoryProtocol.swift in Sources */,
 				BF4F2AF22B7B606D00E5D892 /* AuthError.swift in Sources */,
+				BF4F2B022B7B807300E5D892 /* PhotoListVMProtocol.swift in Sources */,
 				BF4F2A8E2B7634FE00E5D892 /* ServiceConfigurations.swift in Sources */,
 				BF4F2A882B7634A100E5D892 /* Coordinator.swift in Sources */,
 				BF4F2A862B76347200E5D892 /* AppCoordinator.swift in Sources */,
 				BF4F2A992B76364300E5D892 /* TabBarController.swift in Sources */,
 				BF4F2AC92B7A2D2600E5D892 /* AuthVC.swift in Sources */,
-				BF4F2AC52B7A2AB500E5D892 /* RandomPhotosListAssembler.swift in Sources */,
+				BF4F2B062B7B80CE00E5D892 /* PhotoListRootCoordinatorProtocol.swift in Sources */,
+				BF4F2AC52B7A2AB500E5D892 /* PhotoListAssembler.swift in Sources */,
 				BF4F2AE82B7B5FD200E5D892 /* UserAuthorizationScope.swift in Sources */,
 				BF4F2ACB2B7A2D5700E5D892 /* AuthVM.swift in Sources */,
 				BF4F2AF02B7B605500E5D892 /* HTTPMethod.swift in Sources */,
-				BF4F2AC32B7A2AA100E5D892 /* RandomPhotosListCoordinator.swift in Sources */,
+				BF4F2B0D2B7B83B900E5D892 /* PhotoCell.swift in Sources */,
+				BF4F2AC32B7A2AA100E5D892 /* PhotoListCoordinator.swift in Sources */,
 				BF4F2AEA2B7B5FF100E5D892 /* AuthQueryParameterName.swift in Sources */,
 				BF4F2A8C2B7634EE00E5D892 /* Container.swift in Sources */,
 				BF4F2A952B76361200E5D892 /* TabBarRootCoordinatorProtocol.swift in Sources */,
-				BF4F2ABF2B7A2A7900E5D892 /* RandomPhotosListVC.swift in Sources */,
+				BF4F2B042B7B80BE00E5D892 /* PhotoListCoordinatorProtocol.swift in Sources */,
+				BF4F2ABF2B7A2A7900E5D892 /* PhotoListVC.swift in Sources */,
 				BF4F2AFB2B7B76BA00E5D892 /* AlertControllerFactory.swift in Sources */,
+				BF4F2B082B7B82F000E5D892 /* UIWindow+Extension.swift in Sources */,
 				BF4F2ADC2B7B56AE00E5D892 /* ParametrsService.swift in Sources */,
 				BF4F2AF42B7B609500E5D892 /* AuthUserModel.swift in Sources */,
 				BF4F2A9B2B7636BE00E5D892 /* TabBarCoordinator.swift in Sources */,
@@ -419,12 +450,13 @@
 				BF4F2ACF2B7A2D7800E5D892 /* AuthAssembler.swift in Sources */,
 				BF4F2AF62B7B63C000E5D892 /* AuthVCAuthServiceProtocol.swift in Sources */,
 				BF4F2AE52B7B5EE200E5D892 /* AuthService.swift in Sources */,
-				BF4F2AC12B7A2A8500E5D892 /* RandomPhotosListVM.swift in Sources */,
+				BF4F2AC12B7A2A8500E5D892 /* PhotoListVM.swift in Sources */,
 				BF4F2A972B76362800E5D892 /* TabBarAssembler.swift in Sources */,
 				BF4F2ACD2B7A2D6900E5D892 /* AuthCoordinator.swift in Sources */,
 				BF4F2AE22B7B5A2700E5D892 /* Optional+Extension.swift in Sources */,
 				BF4F2AD12B7A2D9B00E5D892 /* AuthVMProtocol.swift in Sources */,
 				BF4F2A932B7635F800E5D892 /* TabBarCoordinatorProtocol.swift in Sources */,
+				BF4F2B0A2B7B831300E5D892 /* UIScreen+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

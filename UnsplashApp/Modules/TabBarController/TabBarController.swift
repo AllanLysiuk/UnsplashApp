@@ -22,7 +22,7 @@ final class TabBarController: UITabBarController {
     private func setTabBarAppearance(){
         let appearance = UITabBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
+        appearance.backgroundColor = UIColor(red: 0.971, green: 0.971, blue: 0.971, alpha: 1)
         
         setTabBarItemsColor(appearance.stackedLayoutAppearance)
         self.tabBar.standardAppearance = appearance
