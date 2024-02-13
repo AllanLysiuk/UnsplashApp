@@ -19,4 +19,12 @@ final class ParametersService: ParametersServiceProtocol {
         ud.setValue(true, forKey: UDKeys.isUserLoggedIn)
     }
     
+    func requestUserAccessToken() -> String? {
+        return ud.string(forKey: UDKeys.userAccessToken)
+    }
+    
+    func saveUserAccessToken(_ accessToken: String) {
+        ud.setValue(accessToken, forKey: UDKeys.userAccessToken)
+    }
+    
 }

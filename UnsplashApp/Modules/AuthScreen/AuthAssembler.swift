@@ -22,11 +22,21 @@ final class AuthAssembler {
        ) -> AuthVM {
            return AuthVM(
             coordinator: coordinator,
-            authService: makeAuthService(container: container)
+            authService: makeAuthService(container: container),
+            parametersService: makeParametersService(container: container),
+            alertFactory: makeAlertFactory(container: container)
            )
        }
     
     private static func makeAuthService(container: Container) -> AuthServiceProtocol {
+        return container.resolve()
+    }
+    
+    private static func makeParametersService(container: Container) -> ParametersServiceProtocol {
+        return container.resolve()
+    }
+    
+    private static func makeAlertFactory(container: Container) -> AlertFactoryProtocol {
         return container.resolve()
     }
 }

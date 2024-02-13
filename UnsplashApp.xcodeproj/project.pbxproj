@@ -42,6 +42,10 @@
 		BF4F2AF22B7B606D00E5D892 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2AF12B7B606D00E5D892 /* AuthError.swift */; };
 		BF4F2AF42B7B609500E5D892 /* AuthUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2AF32B7B609500E5D892 /* AuthUserModel.swift */; };
 		BF4F2AF62B7B63C000E5D892 /* AuthVCAuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2AF52B7B63C000E5D892 /* AuthVCAuthServiceProtocol.swift */; };
+		BF4F2AF82B7B662400E5D892 /* AuthVCParametersServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2AF72B7B662400E5D892 /* AuthVCParametersServiceProtocol.swift */; };
+		BF4F2AFB2B7B76BA00E5D892 /* AlertControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2AFA2B7B76BA00E5D892 /* AlertControllerFactory.swift */; };
+		BF4F2AFD2B7B76D400E5D892 /* AlertControllerFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2AFC2B7B76D400E5D892 /* AlertControllerFactoryProtocol.swift */; };
+		BF4F2B002B7B79AA00E5D892 /* ConstStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2AFF2B7B79AA00E5D892 /* ConstStrings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +86,10 @@
 		BF4F2AF12B7B606D00E5D892 /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		BF4F2AF32B7B609500E5D892 /* AuthUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUserModel.swift; sourceTree = "<group>"; };
 		BF4F2AF52B7B63C000E5D892 /* AuthVCAuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVCAuthServiceProtocol.swift; sourceTree = "<group>"; };
+		BF4F2AF72B7B662400E5D892 /* AuthVCParametersServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVCParametersServiceProtocol.swift; sourceTree = "<group>"; };
+		BF4F2AFA2B7B76BA00E5D892 /* AlertControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerFactory.swift; sourceTree = "<group>"; };
+		BF4F2AFC2B7B76D400E5D892 /* AlertControllerFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerFactoryProtocol.swift; sourceTree = "<group>"; };
+		BF4F2AFF2B7B79AA00E5D892 /* ConstStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstStrings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,8 +125,10 @@
 				BF4F2A872B7634A100E5D892 /* Coordinator.swift */,
 				BF4F2A842B76344100E5D892 /* App */,
 				BF4F2A892B7634CF00E5D892 /* Services */,
+				BF4F2AF92B7B76A300E5D892 /* Factories */,
 				BF4F2A8F2B7635A900E5D892 /* Modules */,
 				BF4F2AE02B7B5A0E00E5D892 /* Helpers */,
+				BF4F2AFE2B7B799900E5D892 /* Resources */,
 				BF4F2A792B7632E200E5D892 /* Assets.xcassets */,
 				BF4F2A7B2B7632E200E5D892 /* LaunchScreen.storyboard */,
 				BF4F2A7E2B7632E200E5D892 /* Info.plist */,
@@ -225,6 +235,7 @@
 				BF4F2AD22B7A2DB300E5D892 /* AuthCoordinatorProtocol.swift */,
 				BF4F2AD42B7A2DD200E5D892 /* AuthRootCoordinatorProtocol.swift */,
 				BF4F2AF52B7B63C000E5D892 /* AuthVCAuthServiceProtocol.swift */,
+				BF4F2AF72B7B662400E5D892 /* AuthVCParametersServiceProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -288,6 +299,23 @@
 				BF4F2AEF2B7B605500E5D892 /* HTTPMethod.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		BF4F2AF92B7B76A300E5D892 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				BF4F2AFA2B7B76BA00E5D892 /* AlertControllerFactory.swift */,
+				BF4F2AFC2B7B76D400E5D892 /* AlertControllerFactoryProtocol.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		BF4F2AFE2B7B799900E5D892 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BF4F2AFF2B7B79AA00E5D892 /* ConstStrings.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,6 +388,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF4F2AF82B7B662400E5D892 /* AuthVCParametersServiceProtocol.swift in Sources */,
+				BF4F2AFD2B7B76D400E5D892 /* AlertControllerFactoryProtocol.swift in Sources */,
 				BF4F2AF22B7B606D00E5D892 /* AuthError.swift in Sources */,
 				BF4F2A8E2B7634FE00E5D892 /* ServiceConfigurations.swift in Sources */,
 				BF4F2A882B7634A100E5D892 /* Coordinator.swift in Sources */,
@@ -375,11 +405,13 @@
 				BF4F2A8C2B7634EE00E5D892 /* Container.swift in Sources */,
 				BF4F2A952B76361200E5D892 /* TabBarRootCoordinatorProtocol.swift in Sources */,
 				BF4F2ABF2B7A2A7900E5D892 /* RandomPhotosListVC.swift in Sources */,
+				BF4F2AFB2B7B76BA00E5D892 /* AlertControllerFactory.swift in Sources */,
 				BF4F2ADC2B7B56AE00E5D892 /* ParametrsService.swift in Sources */,
 				BF4F2AF42B7B609500E5D892 /* AuthUserModel.swift in Sources */,
 				BF4F2A9B2B7636BE00E5D892 /* TabBarCoordinator.swift in Sources */,
 				BF4F2AD52B7A2DD200E5D892 /* AuthRootCoordinatorProtocol.swift in Sources */,
 				BF4F2ADF2B7B58A500E5D892 /* AppCoordinatorParametrsServiceProtocol.swift in Sources */,
+				BF4F2B002B7B79AA00E5D892 /* ConstStrings.swift in Sources */,
 				BF4F2A712B7632E100E5D892 /* AppDelegate.swift in Sources */,
 				BF4F2AEE2B7B603C00E5D892 /* UNCredentials.swift in Sources */,
 				BF4F2AD32B7A2DB300E5D892 /* AuthCoordinatorProtocol.swift in Sources */,

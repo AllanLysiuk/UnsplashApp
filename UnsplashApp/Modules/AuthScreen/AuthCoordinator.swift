@@ -28,4 +28,8 @@ final class AuthCoordinator: Coordinator {
     }
 }
 
-extension AuthCoordinator: AuthCoordinatorProtocol {}
+extension AuthCoordinator: AuthCoordinatorProtocol {
+    func showAlert(_ alert: UIAlertController) {
+        rootNavigationController.present(alert, animated: true)
+    }
+}

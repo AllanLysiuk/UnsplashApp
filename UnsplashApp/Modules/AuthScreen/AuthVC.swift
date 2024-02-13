@@ -19,6 +19,7 @@ final class AuthVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        loadAuthUrl()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,10 +52,42 @@ final class AuthVC: UIViewController {
         ])
     }
     
+    private func loadAuthUrl() {
+        viewModel.configureAuthUrl { [weak self] result in
+            guard let self = self else {return}
+            switch result {
+            case .success(let success):
+                self.webView.load(success)
+            case .failure(let failure):
+                print(failure.localizedDescription)
+            }
+        }
+    }
+    
 }
 
 extension AuthVC: WKNavigationDelegate {
+    
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        
+        if let webViewUrl = webView.url {
+            viewModel.requestUserAccessToken(url: webViewUrl) { [weak self] result in
+                guard let self = self else { return }
+                switch result {
+                case .success(let success):
+                    self.viewModel.userLoggedIn(with: success)
+                case .failure(let failure):
+                    switch failure {
+                    case .incorrectAuthURL,
+                            .incorrectAuthURLComponents,
+                            .incorrectTokenURLComponents,
+                            .jsonTokenResponseIncorrectKey:
+                        print(failure.localizedDescription)
+                    case .serverError(error: let error):
+                        self.viewModel.showAlert(title: failure.errorTitle, message: error.localizedDescription, actions: [.default(ConstStrings.DefaultAlert.okButtonTitle, nil)])
+                    }
+                }
+            }
+        }
     }
+    
 }

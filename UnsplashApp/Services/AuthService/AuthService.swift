@@ -6,6 +6,8 @@ final class AuthService: AuthServiceProtocol {
         static let redirectAuthenticationURI = "https://unsplash.com/oauth/authorize/native"
         static let tokenPath = "unsplash.com/oauth/token"
         static let responseType = "code"
+        static let grantType = "authorization_code"
+        static let accessToken = "access_token"
     }
     
     func configureAuthUrl(completion: @escaping (Result<URLRequest, AuthError>) -> Void) {
@@ -40,20 +42,19 @@ final class AuthService: AuthServiceProtocol {
         urlComponents.scheme = HTTPMethod.scheme
         
         guard let authUrl = urlComponents.url else {
-            //TODO: Change Error
-            completion(.failure(.incorrectAuthorizationURL))
+            completion(.failure(.incorrectAuthURLComponents))
             return
         }
         completion(.success(URLRequest(url: authUrl)))
     }
     
-    func getUserAccessToken(url: URL, completion: @escaping (Result<String, AuthError>) -> Void) {
+    func requestUserAccessToken(url: URL, completion: @escaping (Result<String, AuthError>) -> Void) {
         let components = URLComponents(url: url, resolvingAgainstBaseURL: true)
         let baseURL = url.absoluteString.components(separatedBy: "?").first
         guard baseURL == AuthKeys.redirectAuthenticationURI,
               let codeItem = components?.queryItems?.first(where: { $0.name == AuthKeys.responseType }),
               let code = codeItem.value else {
-            completion(.failure(.incorrectAuthorizationURL))
+            completion(.failure(.incorrectAuthURL))
             return
         }
         
@@ -61,8 +62,7 @@ final class AuthService: AuthServiceProtocol {
         tokenUrlComponents.path = AuthKeys.tokenPath
         tokenUrlComponents.scheme = HTTPMethod.scheme
         guard let url = tokenUrlComponents.url else {
-            //TODO: change error
-            completion(.failure(.incorrectAuthorizationURL))
+            completion(.failure(.incorrectTokenURLComponents))
             return
         }
         
@@ -74,31 +74,34 @@ final class AuthService: AuthServiceProtocol {
             client_secret: UNCredentials.secretKey,
             redirect_uri: UNCredentials.redirectURI,
             code: code,
-            grant_type: "authorization_code"
+            grant_type: AuthKeys.grantType
         )
         
         let data = try! JSONEncoder().encode(user)
         request.httpBody = data
         request.setValue(
-            "application/json",
-            forHTTPHeaderField: "Content-Type"
+            HTTPMethod.jsonHeaderValue,
+            forHTTPHeaderField: HTTPMethod.jsonHeaderField
         )
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
-                print("Error: \(error)")
-            }else if let response = response as? HTTPURLResponse, let data = data {
+                completion(.failure(.serverError(error: error)))
+            } else if let response = response as? HTTPURLResponse, let data = data {
                 print("Status Code: \(response.statusCode)")
                 guard let JSON = try? JSONSerialization.jsonObject(
                     with: data,
                     options: .mutableContainers) as? [String: Any],
-                      let accessToken = JSON["access_token"] as? String
+                      let accessToken = JSON[AuthKeys.accessToken] as? String
                 else {
-                    //TODO: change error
-                    completion(.failure(.incorrectAuthorizationURL))
+                    DispatchQueue.main.async {
+                        completion(.failure(.jsonTokenResponseIncorrectKey))
+                    }
                     return
                 }
-                completion(.success(accessToken))
+                DispatchQueue.main.async {
+                    completion(.success(accessToken))
+                }
             }
         }.resume()
     }
