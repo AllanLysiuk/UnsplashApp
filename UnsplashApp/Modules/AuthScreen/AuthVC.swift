@@ -80,7 +80,9 @@ extension AuthVC: WKNavigationDelegate {
                     case .incorrectAuthURL,
                             .incorrectAuthURLComponents,
                             .incorrectTokenURLComponents,
-                            .jsonTokenResponseIncorrectKey:
+                            .jsonTokenResponseIncorrectKey,
+                            .incorrectUsernameUrlComponents,
+                            .clientError:
                         print(failure.localizedDescription)
                     case .serverError(error: let error):
                         self.viewModel.showAlert(title: failure.errorTitle, message: error.localizedDescription, actions: [.default(ConstStrings.DefaultAlert.okButtonTitle, nil)])

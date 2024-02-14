@@ -25,6 +25,23 @@ final class PhotoListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+//        NetworkService().getPhotosList { result in
+//            
+//        }
+        
+        NetworkService().likeAPhoto(userToken: ParametersService().requestUserAccessToken()!, id: "2C7eeUriLy0") { error in
+            
+        }
+        
+        
+        NetworkService().getUsersLikedPhotosID(userToken: ParametersService().requestUserAccessToken()!, userName: ParametersService().getUserName()!) { error in
+            
+        }
+//
+//        NetworkService().unlikeAPhoto(userToken: ParametersService().requestUserAccessToken()!, id: "2C7eeUriLy0") { error in
+//            
+//        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -113,7 +130,6 @@ extension PhotoListVC: UICollectionViewDelegate,
 extension PhotoListVC: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         view.endEditing(true)
-        
     }
 
 }

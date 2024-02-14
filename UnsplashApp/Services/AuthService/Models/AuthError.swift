@@ -5,7 +5,9 @@ enum AuthError: Error {
     case incorrectAuthURLComponents
     case incorrectTokenURLComponents
     case jsonTokenResponseIncorrectKey
+    case incorrectUsernameUrlComponents
     case serverError(error: Error)
+    case clientError
     
     //TODO: remove string add errors description
     var errorTitle: String {

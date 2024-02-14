@@ -8,10 +8,11 @@ final class AuthService: AuthServiceProtocol {
         static let responseType = "code"
         static let grantType = "authorization_code"
         static let accessToken = "access_token"
+        static let usernameUrlPath = "unsplash.com/me"
     }
     
     func configureAuthUrl(completion: @escaping (Result<URLRequest, AuthError>) -> Void) {
-        let scope: Set<UserAuthorizationScope> = [.public]
+        let scope: Set<UserAuthorizationScope> = [.public, .readCollections, .writeCollections, .readPhotos, .writePhotos, .writeLikes, .readUser, .writeUser]
         let formattedScope = scope
             .map { $0.rawValue }
             .joined(separator: UserAuthorizationScope.scopeSeparator)
@@ -70,11 +71,11 @@ final class AuthService: AuthServiceProtocol {
         request.httpMethod = HTTPMethod.post.rawValue
         
         let user = AuthUserModel(
-            client_id: UNCredentials.accessKey,
-            client_secret: UNCredentials.secretKey,
-            redirect_uri: UNCredentials.redirectURI,
+            clientID: UNCredentials.accessKey,
+            clientSecret: UNCredentials.secretKey,
+            redirectUri: UNCredentials.redirectURI,
             code: code,
-            grant_type: AuthKeys.grantType
+            grantType: AuthKeys.grantType
         )
         
         let data = try! JSONEncoder().encode(user)
@@ -104,6 +105,35 @@ final class AuthService: AuthServiceProtocol {
                 }
             }
         }.resume()
+    }
+    
+    func requestUserName(userToken: String, completion: @escaping (Result<UserName, AuthError>) -> Void) {
+//        var urlComponents = URLComponents()
+//        urlComponents.path = AuthKeys.usernameUrlPath
+//        urlComponents.scheme = HTTPMethod.scheme
+//        
+//        guard let url = urlComponents.url else {
+//            completion(.failure(.incorrectUsernameUrlComponents))
+//            return
+//        }
+//        
+//        var request = URLRequest(url: url)
+//        request.httpMethod = HTTPMethod.get.rawValue
+//        request.setValue(HTTPMethod.bearerTokenHeaderValue + userToken, forHTTPHeaderField: HTTPMethod.bearerTokenHeaderField)
+//        
+//        URLSession.shared.dataTask(with: url) { (data, response, error) in
+//            if let error = error {
+//                completion(.failure(.serverError(error: error)))
+//            }else if let response = response as? HTTPURLResponse, let data = data {
+//                do{
+//                    let decoder = JSONDecoder()
+//                    let userName = try decoder.decode(UserName.self, from: data)
+//                    completion(.success(userName))
+//                }catch{
+//                    completion(.failure(.clientError))
+//                }
+//            }
+//        }.resume()
     }
 }
 

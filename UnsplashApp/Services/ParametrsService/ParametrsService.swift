@@ -5,6 +5,7 @@ final class ParametersService: ParametersServiceProtocol {
     private enum UDKeys {
         static let isUserLoggedIn = "isUserLoggedIn"
         static let userAccessToken = "userAccessToken"
+        static let userName = "userName"
     }
     
     private lazy var ud: UserDefaults = {
@@ -25,6 +26,14 @@ final class ParametersService: ParametersServiceProtocol {
     
     func saveUserAccessToken(_ accessToken: String) {
         ud.setValue(accessToken, forKey: UDKeys.userAccessToken)
+    }
+    
+    func saveUserName(_ userName: String) {
+        ud.setValue(userName, forKey: UDKeys.userName)
+    }
+    
+    func getUserName() -> String? {
+        return ud.string(forKey: UDKeys.userName)
     }
     
 }
