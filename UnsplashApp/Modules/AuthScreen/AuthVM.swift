@@ -27,18 +27,21 @@ final class AuthVM: AuthVMProtocol {
     }
     
     func userLoggedIn(with accessToken: String) {
-        authService.requestUserName(userToken: accessToken) { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let success):
-                self.parametersService.saveUserName(success.username)
-                self.parametersService.saveUserAccessToken(accessToken)
-                self.parametersService.userHasLoggedIn()
-                self.finish()
-            case .failure(let failure):
-                print(failure.localizedDescription)
-            }
-        }
+        self.parametersService.saveUserAccessToken(accessToken)
+        self.parametersService.userHasLoggedIn()
+        self.finish()
+//        authService.requestUserName(userToken: accessToken) { [weak self] result in
+//            guard let self = self else { return }
+//            switch result {
+//            case .success(let success):
+//                self.parametersService.saveUserName(success.username)
+//                self.parametersService.saveUserAccessToken(accessToken)
+//                self.parametersService.userHasLoggedIn()
+//                self.finish()
+//            case .failure(let failure):
+//                print(failure.localizedDescription)
+//            }
+//        }
         
     }
     

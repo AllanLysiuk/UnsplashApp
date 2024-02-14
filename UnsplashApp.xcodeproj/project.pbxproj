@@ -82,6 +82,7 @@
 		BF4F2B512B7CAEFA00E5D892 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B502B7CAEFA00E5D892 /* NetworkError.swift */; };
 		BF4F2B532B7CAF5F00E5D892 /* ResponseCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B522B7CAF5F00E5D892 /* ResponseCode.swift */; };
 		BF4F2B582B7CB7CC00E5D892 /* UserName.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B572B7CB7CC00E5D892 /* UserName.swift */; };
+		BF4F2B5A2B7CC54900E5D892 /* PhotoListNetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B592B7CC54900E5D892 /* PhotoListNetworkServiceProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -162,6 +163,7 @@
 		BF4F2B502B7CAEFA00E5D892 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		BF4F2B522B7CAF5F00E5D892 /* ResponseCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCode.swift; sourceTree = "<group>"; };
 		BF4F2B572B7CB7CC00E5D892 /* UserName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserName.swift; sourceTree = "<group>"; };
+		BF4F2B592B7CC54900E5D892 /* PhotoListNetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListNetworkServiceProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,6 +294,7 @@
 				BF4F2B012B7B807300E5D892 /* PhotoListVMProtocol.swift */,
 				BF4F2B032B7B80BE00E5D892 /* PhotoListCoordinatorProtocol.swift */,
 				BF4F2B052B7B80CE00E5D892 /* PhotoListRootCoordinatorProtocol.swift */,
+				BF4F2B592B7CC54900E5D892 /* PhotoListNetworkServiceProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -671,6 +674,7 @@
 				BF4F2B2C2B7B9DD100E5D892 /* PhotoInfoVM.swift in Sources */,
 				BF4F2B122B7B8CCB00E5D892 /* FavPhotosListVM.swift in Sources */,
 				BF4F2B512B7CAEFA00E5D892 /* NetworkError.swift in Sources */,
+				BF4F2B5A2B7CC54900E5D892 /* PhotoListNetworkServiceProtocol.swift in Sources */,
 				BF4F2AE52B7B5EE200E5D892 /* AuthService.swift in Sources */,
 				BF4F2AC12B7A2A8500E5D892 /* PhotoListVM.swift in Sources */,
 				BF4F2B582B7CB7CC00E5D892 /* UserName.swift in Sources */,

@@ -5,12 +5,14 @@ final class PhotoInfoAssembler {
        
        static func makePhotoInfoVC(
         coordinator: PhotoInfoCoordinatorProtocol,
-        container: Container
+        container: Container,
+        photo: Photo
        ) -> UIViewController {
            let vc = PhotoInfoVC(
             viewModel: makeViewModel(
                 coordinator: coordinator,
-                container: container
+                container: container,
+                photo: photo
             )
            )
            return vc
@@ -18,12 +20,18 @@ final class PhotoInfoAssembler {
        
        private static func makeViewModel(
         coordinator: PhotoInfoCoordinatorProtocol,
-        container: Container
+        container: Container,
+        photo: Photo
        ) -> PhotoInfoVM {
            return PhotoInfoVM(
-            coordinator: coordinator
+            coordinator: coordinator,
+            imageDownloadService: makeImageDownloadService(container: container),
+            photo: photo
            )
        }
     
+    private static func makeImageDownloadService(container: Container) -> ImageDownloadServiceProtocol {
+        return container.resolve()
+    }
 }
 

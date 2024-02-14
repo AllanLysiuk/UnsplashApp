@@ -18,7 +18,11 @@ final class PhotoInfoCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = PhotoInfoAssembler.makePhotoInfoVC(coordinator: self, container: container)
+        assert(false, "Use another start func")
+    }
+    
+    func start(with photo: Photo) {
+        let vc = PhotoInfoAssembler.makePhotoInfoVC(coordinator: self, container: container, photo: photo)
         rootNavigationController.present(vc, animated: true)
     }
     

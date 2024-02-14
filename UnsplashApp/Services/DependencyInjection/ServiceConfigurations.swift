@@ -8,6 +8,8 @@ final class ServiceConfigurations {
         container.register({ Self.parametersService })
         container.register({ Self.authService })
         container.register({ Self.alertFactory })
+        container.register({ Self.networkService })
+        container.register({ Self.imageDownloadService })
     }
 }
 
@@ -18,7 +20,12 @@ protocol ParametersServiceProtocol: AnyObject,
 protocol AuthServiceProtocol: AnyObject,
                               AuthVCAuthServiceProtocol {}
 
-protocol AlertFactoryProtocol: AnyObject, AlertControllerFactoryProtocol {}
+protocol AlertFactoryProtocol: AnyObject,
+                               AlertControllerFactoryProtocol {}
+
+protocol NetworkServiceProtocol: AnyObject,
+                                 PhotoListNetworkServiceProtocol {}
+
 
 private extension ServiceConfigurations {
     
@@ -33,5 +40,12 @@ private extension ServiceConfigurations {
     static var alertFactory: AlertFactoryProtocol {
         return AlertControllerFactory()
     }
+    
+    static var networkService: NetworkServiceProtocol {
+        return NetworkService()
+    }
 
+    static var imageDownloadService: ImageDownloadServiceProtocol {
+        return ImageDownloadService(cache: .shared)
+    }
 }

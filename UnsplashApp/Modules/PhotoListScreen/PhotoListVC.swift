@@ -25,18 +25,27 @@ final class PhotoListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        viewModel.getPhotosList { error in
+            if error.isNil {
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+                
+            }
+        }
+        
 //        NetworkService().getPhotosList { result in
 //            
 //        }
         
-        NetworkService().likeAPhoto(userToken: ParametersService().requestUserAccessToken()!, id: "2C7eeUriLy0") { error in
-            
-        }
-        
-        
-        NetworkService().getUsersLikedPhotosID(userToken: ParametersService().requestUserAccessToken()!, userName: ParametersService().getUserName()!) { error in
-            
-        }
+//        NetworkService().likeAPhoto(userToken: ParametersService().requestUserAccessToken()!, id: "2C7eeUriLy0") { error in
+//            
+//        }
+//        
+//        
+//        NetworkService().getUsersLikedPhotosID(userToken: ParametersService().requestUserAccessToken()!, userName: ParametersService().getUserName()!) { error in
+//            
+//        }
 //
 //        NetworkService().unlikeAPhoto(userToken: ParametersService().requestUserAccessToken()!, id: "2C7eeUriLy0") { error in
 //            
@@ -109,20 +118,31 @@ final class PhotoListVC: UIViewController {
 extension PhotoListVC: UICollectionViewDelegate,
                        UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return viewModel.photos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(PhotoCell.self)", for: indexPath) as? PhotoCell else { return UICollectionViewCell() }
         cell.viewModel = ImageDownloadCellAssembler.makeVM()
-        if let url = URL(string: "https://images.unsplash.com/photo-1417325384643-aac51acc9e5d?q=75&fm=jpg&w=1080&fit=max") {
-            cell.configureCell(imageURL: url)
-        }
+        cell.configureCell(imageURL: viewModel.photos[indexPath.row].urls.url)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewModel.showPhotoInfoVC()
+        viewModel.showPhotoInfoVC(for: indexPath.row)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let lastIndex = viewModel.photos.count - 1
+        if indexPath.row == lastIndex {
+            viewModel.getPhotosList { error in
+                if error.isNil {
+                    DispatchQueue.main.async {
+                        collectionView.reloadData()
+                    }
+                }
+            }
+        }
     }
     
 }

@@ -1,6 +1,6 @@
 import Foundation
 
-final class NetworkService {
+final class NetworkService: NetworkServiceProtocol {
     
     private enum NetworkKeys {
         static let baseUrlPath = "api.unsplash.com"

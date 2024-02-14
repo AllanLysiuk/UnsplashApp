@@ -23,6 +23,14 @@ final class PhotoInfoVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        viewModel.downloadImage { result in
+            switch result {
+            case .success(let success):
+                self.imageView.image = success
+            case .failure(let failure):
+                print(failure.localizedDescription)
+            }
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -47,14 +55,13 @@ final class PhotoInfoVC: UIViewController {
     private func configureImageView() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(systemName: "heart")
         view.addSubview(imageView)
     }
     
     private func configureAuthorNameLabel() {
         authorNameLabel.translatesAutoresizingMaskIntoConstraints = false
         authorNameLabel.textColor = .black
-        authorNameLabel.text = "Author"
+        authorNameLabel.text = viewModel.photo.user.name
         authorNameLabel.font = .boldSystemFont(ofSize: 20)
         view.addSubview(authorNameLabel)
     }
@@ -62,7 +69,7 @@ final class PhotoInfoVC: UIViewController {
     private func configureCreationDateLabel() {
         creationDateLabel.translatesAutoresizingMaskIntoConstraints = false
         creationDateLabel.textColor = .black
-        creationDateLabel.text = "Author"
+        creationDateLabel.text = viewModel.photo.createdAt
         creationDateLabel.font = .boldSystemFont(ofSize: 20)
         view.addSubview(creationDateLabel)
     }
@@ -70,7 +77,7 @@ final class PhotoInfoVC: UIViewController {
     private func configureLocationLabel() {
         locationLabel.translatesAutoresizingMaskIntoConstraints = false
         locationLabel.textColor = .black
-        locationLabel.text = "Author"
+        locationLabel.text = viewModel.photo.location.name
         locationLabel.font = .boldSystemFont(ofSize: 20)
         view.addSubview(locationLabel)
     }
@@ -78,7 +85,7 @@ final class PhotoInfoVC: UIViewController {
     private func configureDownloadsAmountLabel() {
         downloadsAmountLabel.translatesAutoresizingMaskIntoConstraints = false
         downloadsAmountLabel.textColor = .black
-        downloadsAmountLabel.text = "Author"
+        downloadsAmountLabel.text = "\(viewModel.photo.downloads)"
         downloadsAmountLabel.font = .boldSystemFont(ofSize: 20)
         view.addSubview(downloadsAmountLabel)
     }
@@ -97,7 +104,7 @@ final class PhotoInfoVC: UIViewController {
             imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            imageView.heightAnchor.constraint(equalToConstant: 200)
+            imageView.heightAnchor.constraint(equalToConstant: 400)
         ])
         
         NSLayoutConstraint.activate([

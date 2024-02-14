@@ -21,7 +21,12 @@ final class PhotoListAssembler {
         container: Container
        ) -> PhotoListVM {
            return PhotoListVM(
-            coordinator: coordinator
+            coordinator: coordinator,
+            networkService: makeNetworkService(container: container)
            )
        }
+    
+    private static func makeNetworkService(container: Container) -> NetworkServiceProtocol {
+        return container.resolve()
+    }
 }

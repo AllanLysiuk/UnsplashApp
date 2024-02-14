@@ -33,14 +33,14 @@ final class PhotoListCoordinator: Coordinator {
 }
 
 extension PhotoListCoordinator: PhotoListCoordinatorProtocol {
-    func showPhotoInfoVC() {
+    func showPhotoInfoVC(for photo: Photo) {
         let coordinator = PhotoInfoCoordinator(
             rootNavigationController: navigationController,
             rootCoordinator: self,
             container: container
         )
         childCoordinators.append(coordinator)
-        coordinator.start()
+        coordinator.start(with: photo)
     }
 }
 
