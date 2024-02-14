@@ -72,20 +72,20 @@ final class FavPhotosListVC: UIViewController {
 
 extension FavPhotosListVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 14
+        return viewModel.photos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "\(FavPhotoCell.self)", for: indexPath) as? FavPhotoCell else { return UITableViewCell() }
         cell.viewModel = ImageDownloadCellAssembler.makeVM()
-        if let url = URL(string: "https://images.unsplash.com/photo-1417325384643-aac51acc9e5d?q=75&fm=jpg&w=1080&fit=max") {
-            cell.configureCell(authorName: "Author",
-                               imageURL: url)
-        }
+        cell.configureCell(
+            authorName: viewModel.photos[indexPath.row].user.name ?? ConstStrings.FavPhoto.unknownAuthor,
+            imageURL: viewModel.photos[indexPath.row].urls.url
+        )
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.showPhotoInfoVC()
+        viewModel.showPhotoInfoVC(for: indexPath.row)
     }
 }

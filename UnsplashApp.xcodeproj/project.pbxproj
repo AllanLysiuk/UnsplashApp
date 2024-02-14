@@ -83,6 +83,11 @@
 		BF4F2B532B7CAF5F00E5D892 /* ResponseCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B522B7CAF5F00E5D892 /* ResponseCode.swift */; };
 		BF4F2B582B7CB7CC00E5D892 /* UserName.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B572B7CB7CC00E5D892 /* UserName.swift */; };
 		BF4F2B5A2B7CC54900E5D892 /* PhotoListNetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B592B7CC54900E5D892 /* PhotoListNetworkServiceProtocol.swift */; };
+		BF4F2B5E2B7CD78A00E5D892 /* PhotoInfoNetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B5D2B7CD78A00E5D892 /* PhotoInfoNetworkServiceProtocol.swift */; };
+		BF4F2B602B7CE39A00E5D892 /* PhotoInfoParamServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B5F2B7CE39A00E5D892 /* PhotoInfoParamServiceProtocol.swift */; };
+		BF4F2B622B7CE8AE00E5D892 /* ImageAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B612B7CE8AE00E5D892 /* ImageAssets.swift */; };
+		BF4F2B642B7CEEB500E5D892 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B632B7CEEB500E5D892 /* Date+Extension.swift */; };
+		BF4F2B662B7CF4C900E5D892 /* FavPhotoListNetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4F2B652B7CF4C900E5D892 /* FavPhotoListNetworkServiceProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -164,6 +169,11 @@
 		BF4F2B522B7CAF5F00E5D892 /* ResponseCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCode.swift; sourceTree = "<group>"; };
 		BF4F2B572B7CB7CC00E5D892 /* UserName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserName.swift; sourceTree = "<group>"; };
 		BF4F2B592B7CC54900E5D892 /* PhotoListNetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListNetworkServiceProtocol.swift; sourceTree = "<group>"; };
+		BF4F2B5D2B7CD78A00E5D892 /* PhotoInfoNetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoNetworkServiceProtocol.swift; sourceTree = "<group>"; };
+		BF4F2B5F2B7CE39A00E5D892 /* PhotoInfoParamServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoParamServiceProtocol.swift; sourceTree = "<group>"; };
+		BF4F2B612B7CE8AE00E5D892 /* ImageAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAssets.swift; sourceTree = "<group>"; };
+		BF4F2B632B7CEEB500E5D892 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		BF4F2B652B7CF4C900E5D892 /* FavPhotoListNetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavPhotoListNetworkServiceProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -400,6 +410,7 @@
 			isa = PBXGroup;
 			children = (
 				BF4F2AFF2B7B79AA00E5D892 /* ConstStrings.swift */,
+				BF4F2B612B7CE8AE00E5D892 /* ImageAssets.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -431,6 +442,7 @@
 				BF4F2B1A2B7B8D2900E5D892 /* FavPhotosListVMProtocol.swift */,
 				BF4F2B182B7B8D1700E5D892 /* FavPhotosListCoordinatorProtocol.swift */,
 				BF4F2B1C2B7B8D3D00E5D892 /* FavPhotosListRootCoordinatorProtocol.swift */,
+				BF4F2B652B7CF4C900E5D892 /* FavPhotoListNetworkServiceProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -461,6 +473,8 @@
 				BF4F2B232B7B9D9800E5D892 /* PhotoInfoVMProtocol.swift */,
 				BF4F2B252B7B9DA600E5D892 /* PhotoInfoCoordinatorProtocol.swift */,
 				BF4F2B272B7B9DB600E5D892 /* PhotoInfoRootCoordinatorProtocol.swift */,
+				BF4F2B5D2B7CD78A00E5D892 /* PhotoInfoNetworkServiceProtocol.swift */,
+				BF4F2B5F2B7CE39A00E5D892 /* PhotoInfoParamServiceProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -514,6 +528,7 @@
 				BF4F2AE12B7B5A2700E5D892 /* Optional+Extension.swift */,
 				BF4F2B072B7B82F000E5D892 /* UIWindow+Extension.swift */,
 				BF4F2B092B7B831300E5D892 /* UIScreen+Extension.swift */,
+				BF4F2B632B7CEEB500E5D892 /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -619,6 +634,7 @@
 				BF4F2B242B7B9D9800E5D892 /* PhotoInfoVMProtocol.swift in Sources */,
 				BF4F2B102B7B8CC000E5D892 /* FavPhotosListVC.swift in Sources */,
 				BF4F2B022B7B807300E5D892 /* PhotoListVMProtocol.swift in Sources */,
+				BF4F2B602B7CE39A00E5D892 /* PhotoInfoParamServiceProtocol.swift in Sources */,
 				BF4F2B142B7B8CEB00E5D892 /* FavPhotosListAssembler.swift in Sources */,
 				BF4F2A8E2B7634FE00E5D892 /* ServiceConfigurations.swift in Sources */,
 				BF4F2A882B7634A100E5D892 /* Coordinator.swift in Sources */,
@@ -629,6 +645,7 @@
 				BF4F2B062B7B80CE00E5D892 /* PhotoListRootCoordinatorProtocol.swift in Sources */,
 				BF4F2AC52B7A2AB500E5D892 /* PhotoListAssembler.swift in Sources */,
 				BF4F2AE82B7B5FD200E5D892 /* UserAuthorizationScope.swift in Sources */,
+				BF4F2B622B7CE8AE00E5D892 /* ImageAssets.swift in Sources */,
 				BF4F2ACB2B7A2D5700E5D892 /* AuthVM.swift in Sources */,
 				BF4F2B472B7C99B000E5D892 /* Photo.swift in Sources */,
 				BF4F2AF02B7B605500E5D892 /* HTTPMethod.swift in Sources */,
@@ -650,6 +667,7 @@
 				BF4F2B4B2B7C99D900E5D892 /* Author.swift in Sources */,
 				BF4F2AF42B7B609500E5D892 /* AuthUserModel.swift in Sources */,
 				BF4F2A9B2B7636BE00E5D892 /* TabBarCoordinator.swift in Sources */,
+				BF4F2B642B7CEEB500E5D892 /* Date+Extension.swift in Sources */,
 				BF4F2B2A2B7B9DC900E5D892 /* PhotoInfoVC.swift in Sources */,
 				BF4F2AD52B7A2DD200E5D892 /* AuthRootCoordinatorProtocol.swift in Sources */,
 				BF4F2B332B7BAC3700E5D892 /* ImageDownloadService.swift in Sources */,
@@ -660,6 +678,7 @@
 				BF4F2B2E2B7B9DDC00E5D892 /* PhotoInfoCoordinator.swift in Sources */,
 				BF4F2B162B7B8CFF00E5D892 /* FavPhotoListCoordinator.swift in Sources */,
 				BF4F2A712B7632E100E5D892 /* AppDelegate.swift in Sources */,
+				BF4F2B5E2B7CD78A00E5D892 /* PhotoInfoNetworkServiceProtocol.swift in Sources */,
 				BF4F2B492B7C99C700E5D892 /* Urls.swift in Sources */,
 				BF4F2B1B2B7B8D2900E5D892 /* FavPhotosListVMProtocol.swift in Sources */,
 				BF4F2AEE2B7B603C00E5D892 /* UNCredentials.swift in Sources */,
@@ -677,6 +696,7 @@
 				BF4F2B5A2B7CC54900E5D892 /* PhotoListNetworkServiceProtocol.swift in Sources */,
 				BF4F2AE52B7B5EE200E5D892 /* AuthService.swift in Sources */,
 				BF4F2AC12B7A2A8500E5D892 /* PhotoListVM.swift in Sources */,
+				BF4F2B662B7CF4C900E5D892 /* FavPhotoListNetworkServiceProtocol.swift in Sources */,
 				BF4F2B582B7CB7CC00E5D892 /* UserName.swift in Sources */,
 				BF4F2A972B76362800E5D892 /* TabBarAssembler.swift in Sources */,
 				BF4F2ACD2B7A2D6900E5D892 /* AuthCoordinator.swift in Sources */,

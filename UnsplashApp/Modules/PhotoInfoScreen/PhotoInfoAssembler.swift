@@ -26,11 +26,21 @@ final class PhotoInfoAssembler {
            return PhotoInfoVM(
             coordinator: coordinator,
             imageDownloadService: makeImageDownloadService(container: container),
+            networkService: makeNetworkService(container: container),
+            parametersService: makeParametersService(container: container),
             photo: photo
            )
        }
     
     private static func makeImageDownloadService(container: Container) -> ImageDownloadServiceProtocol {
+        return container.resolve()
+    }
+    
+    private static func makeNetworkService(container: Container) -> NetworkServiceProtocol {
+        return container.resolve()
+    }
+    
+    private static func makeParametersService(container: Container) -> ParametersServiceProtocol {
         return container.resolve()
     }
 }

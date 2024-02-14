@@ -21,7 +21,12 @@ final class FavPhotosListAssembler {
         container: Container
        ) -> FavPhotosListVM {
            return FavPhotosListVM(
-            coordinator: coordinator
+            coordinator: coordinator,
+            networkService: makeNetworkService(container: container)
            )
        }
+    
+    private static func makeNetworkService(container: Container) -> NetworkServiceProtocol {
+        return container.resolve()
+    }
 }

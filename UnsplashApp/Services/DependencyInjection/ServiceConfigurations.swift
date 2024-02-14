@@ -15,7 +15,8 @@ final class ServiceConfigurations {
 
 protocol ParametersServiceProtocol: AnyObject,
                                     AppCoordinatorParametersServiceProtocol,
-                                    AuthVCParametersServiceProtocol {}
+                                    AuthVCParametersServiceProtocol,
+                                    PhotoInfoParamServiceProtocol {}
 
 protocol AuthServiceProtocol: AnyObject,
                               AuthVCAuthServiceProtocol {}
@@ -24,7 +25,9 @@ protocol AlertFactoryProtocol: AnyObject,
                                AlertControllerFactoryProtocol {}
 
 protocol NetworkServiceProtocol: AnyObject,
-                                 PhotoListNetworkServiceProtocol {}
+                                 PhotoListNetworkServiceProtocol,
+                                 PhotoInfoNetworkServiceProtocol,
+                                 FavPhotoListNetworkServiceProtocol {}
 
 
 private extension ServiceConfigurations {
@@ -44,7 +47,7 @@ private extension ServiceConfigurations {
     static var networkService: NetworkServiceProtocol {
         return NetworkService()
     }
-
+    
     static var imageDownloadService: ImageDownloadServiceProtocol {
         return ImageDownloadService(cache: .shared)
     }

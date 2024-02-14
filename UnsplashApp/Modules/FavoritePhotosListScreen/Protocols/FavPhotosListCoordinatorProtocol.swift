@@ -1,6 +1,6 @@
 import Foundation
 
 protocol FavPhotosListCoordinatorProtocol: AnyObject {
-    func showPhotoInfoVC()
+    func showPhotoInfoVC(for photo: Photo)
     func finish()
 }

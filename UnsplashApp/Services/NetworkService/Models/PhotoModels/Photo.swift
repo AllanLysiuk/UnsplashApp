@@ -7,6 +7,7 @@ struct Photo: Codable {
     let downloads: Int
     let user: Author
     let location: ImageLocation
+    let likedByUser: Bool
     
     enum CodingKeys: String, CodingKey {
         case urls
@@ -15,6 +16,7 @@ struct Photo: Codable {
         case downloads
         case user
         case location
+        case likedByUser = "liked_by_user"
     }
     
     init(from decoder: Decoder) throws {
@@ -25,5 +27,6 @@ struct Photo: Codable {
         self.downloads = try container.decode(Int.self, forKey: .downloads)
         self.user = try container.decode(Author.self, forKey: .user)
         self.location = try container.decode(ImageLocation.self, forKey: .location)
+        self.likedByUser = try container.decode(Bool.self, forKey: .likedByUser)
     }
 }

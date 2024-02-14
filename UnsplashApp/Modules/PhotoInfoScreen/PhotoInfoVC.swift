@@ -23,6 +23,34 @@ final class PhotoInfoVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        setUpActions()
+        downloadSelectedPhoto()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        if parent == nil {
+            viewModel.finish(shouldMoveToParent: false)
+        }
+    }
+    
+    private func setUpActions() {
+        likeButton.addTarget(self,
+                             action: #selector(likeButtonDidTap),
+                             for: .touchUpInside)
+    }
+    
+    //TODO: Liked photo is not passing like to previous screen
+    @objc private func likeButtonDidTap() {
+        likeButton.isSelected = !likeButton.isSelected
+        if likeButton.isSelected {
+            viewModel.likeAPhoto()
+        } else {
+            viewModel.unlikeAPhoto()
+        }
+    }
+    
+    private func downloadSelectedPhoto() {
         viewModel.downloadImage { result in
             switch result {
             case .success(let success):
@@ -30,13 +58,6 @@ final class PhotoInfoVC: UIViewController {
             case .failure(let failure):
                 print(failure.localizedDescription)
             }
-        }
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        if parent == nil {
-            viewModel.finish(shouldMoveToParent: false)
         }
     }
     
@@ -61,7 +82,7 @@ final class PhotoInfoVC: UIViewController {
     private func configureAuthorNameLabel() {
         authorNameLabel.translatesAutoresizingMaskIntoConstraints = false
         authorNameLabel.textColor = .black
-        authorNameLabel.text = viewModel.photo.user.name
+        authorNameLabel.text = ConstStrings.PhotoInfo.authorLabel + (viewModel.photo.user.name ?? ConstStrings.PhotoInfo.noInfo)
         authorNameLabel.font = .boldSystemFont(ofSize: 20)
         view.addSubview(authorNameLabel)
     }
@@ -69,23 +90,23 @@ final class PhotoInfoVC: UIViewController {
     private func configureCreationDateLabel() {
         creationDateLabel.translatesAutoresizingMaskIntoConstraints = false
         creationDateLabel.textColor = .black
-        creationDateLabel.text = viewModel.photo.createdAt
+        creationDateLabel.text = ConstStrings.PhotoInfo.creationDateLabel + Date().convertFromISO8601String(viewModel.photo.createdAt)
         creationDateLabel.font = .boldSystemFont(ofSize: 20)
         view.addSubview(creationDateLabel)
     }
     
     private func configureLocationLabel() {
-        locationLabel.translatesAutoresizingMaskIntoConstraints = false
         locationLabel.textColor = .black
-        locationLabel.text = viewModel.photo.location.name
+        locationLabel.text = ConstStrings.PhotoInfo.locationLabel + (viewModel.photo.location.name ?? ConstStrings.PhotoInfo.noInfo)
         locationLabel.font = .boldSystemFont(ofSize: 20)
+        locationLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(locationLabel)
     }
     
     private func configureDownloadsAmountLabel() {
         downloadsAmountLabel.translatesAutoresizingMaskIntoConstraints = false
         downloadsAmountLabel.textColor = .black
-        downloadsAmountLabel.text = "\(viewModel.photo.downloads)"
+        downloadsAmountLabel.text = ConstStrings.PhotoInfo.downloadsLabel + "\(viewModel.photo.downloads)"
         downloadsAmountLabel.font = .boldSystemFont(ofSize: 20)
         view.addSubview(downloadsAmountLabel)
     }
@@ -93,9 +114,10 @@ final class PhotoInfoVC: UIViewController {
     private func configureLikeButton() {
         likeButton.translatesAutoresizingMaskIntoConstraints = false
         likeButton.backgroundColor = .clear
-        likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        likeButton.isSelected = viewModel.photo.likedByUser
+        likeButton.setImage(ImageAssets.unlikedPhoto, for: .normal)
         likeButton.imageView?.tintColor = .red
-        likeButton.setImage(UIImage(systemName: "heart"), for: .selected)
+        likeButton.setImage(ImageAssets.likedPhoto, for: .selected)
         view.addSubview(likeButton)
     }
     
@@ -109,33 +131,33 @@ final class PhotoInfoVC: UIViewController {
         
         NSLayoutConstraint.activate([
             authorNameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8),
-            authorNameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            authorNameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
             authorNameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
         
         NSLayoutConstraint.activate([
             creationDateLabel.topAnchor.constraint(equalTo: authorNameLabel.bottomAnchor, constant: 8),
-            creationDateLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            creationDateLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
             creationDateLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
         
         NSLayoutConstraint.activate([
             locationLabel.topAnchor.constraint(equalTo: creationDateLabel.bottomAnchor, constant: 8),
-            locationLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            locationLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
             locationLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
         
         NSLayoutConstraint.activate([
             downloadsAmountLabel.topAnchor.constraint(equalTo: locationLabel.bottomAnchor, constant: 8),
-            downloadsAmountLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            downloadsAmountLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
             downloadsAmountLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            likeButton.topAnchor.constraint(equalTo: downloadsAmountLabel.bottomAnchor, constant: 8),
-            likeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            likeButton.heightAnchor.constraint(equalToConstant: 60),
-            likeButton.widthAnchor.constraint(equalToConstant: 60),
+            likeButton.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8),
+            likeButton.trailingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: -8),
+            likeButton.heightAnchor.constraint(equalToConstant: 50),
+            likeButton.widthAnchor.constraint(equalToConstant: 50),
         ])
     }
     
